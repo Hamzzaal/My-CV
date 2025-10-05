@@ -1,105 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamzah Ali Al-Haidari - Cybersecurity Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  * {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
-  body {background:#f4f4f9; color:#333;}
-  header {background:#1f1f2e; color:white; padding:40px 20px; text-align:center;}
-  header h1 {font-size:2.5em; margin-bottom:10px;}
-  header p {font-size:1.1em; margin-bottom:5px;}
-  nav {margin-top:20px;}
-  nav a {color:white; margin:0 15px; text-decoration:none; font-weight:700;}
-  section {padding:60px 20px; max-width:1000px; margin:0 auto;}
-  section h2 {font-size:2em; margin-bottom:20px; border-bottom:2px solid #1f1f2e; display:inline-block; padding-bottom:5px;}
-  .skills, .projects {display:flex; flex-wrap:wrap; gap:20px;}
-  .skill, .project {background:white; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); flex:1 1 250px;}
-  footer {background:#1f1f2e; color:white; text-align:center; padding:20px;}
-  a.button {display:inline-block; padding:10px 20px; background:#1f1f2e; color:white; text-decoration:none; border-radius:5px; margin-top:10px;}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hamzah Ali Al‑Haidari — Cybersecurity & Network Engineer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#00bcd4;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+      --white:#e6eef6;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(180deg,#071021 0%, #0f1724 60%);color:var(--white);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:30px auto;padding:24px}
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:16px;align-items:center}
+    .avatar{
+      width:86px;height:86px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6dd5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#031118;font-size:28px;box-shadow:0 6px 24px rgba(0,0,0,.6)
+    }
+    .name{line-height:1}
+    .name h1{font-size:20px;margin:0}
+    .name p{margin:2px 0 0;color:var(--muted);font-size:13px}
+    nav.top{display:flex;gap:10px;align-items:center}
+    nav.top button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+    .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px;border-radius:8px;cursor:pointer}
+    main{margin-top:26px;display:grid;grid-template-columns:380px 1fr;gap:24px}
+    /* Left column */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.6);border:1px solid rgba(255,255,255,0.02)}
+    .contact-list{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
+    .pill{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);border:1px solid rgba(0,0,0,0.2)}
+    .skills-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;margin-top:12px}
+    .skill-item{background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:10px;border-radius:8px;font-size:13px;color:var(--white);border:1px solid rgba(255,255,255,0.02)}
+    .download-links{display:flex;gap:10px;margin-top:12px}
+    .download-links a{background:var(--accent);color:#031118;padding:8px 12px;border-radius:8px;font-weight:700}
+    /* Right column */
+    .section{margin-bottom:18px}
+    .section h2{margin:0 0 12px;font-size:18px;color:var(--accent);display:flex;align-items:center;gap:10px}
+    .muted{color:var(--muted);font-size:14px}
+    .experience-item{background:transparent;border-left:3px solid rgba(255,255,255,0.03);padding:10px 14px;margin-bottom:12px;border-radius:6px}
+    .experience-item h3{margin:0;font-size:15px}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    footer{margin-top:26px;padding:12px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; padding-bottom:40px}
+      .avatar{width:72px;height:72px}
+    }
+
+    /* Arabic support when active */
+    .rtl{direction:rtl;font-family:'Cairo',sans-serif}
+    .small-muted{font-size:12px;color:var(--muted)}
+    .tag{display:inline-block;background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:6px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Hamzah Ali Al-Haidari</h1>
-  <p>Cybersecurity & Network Engineer</p>
-  <p>Ibb, Yemen | +967772765706 | 7.7hamza0@gmail.com</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="container" id="app">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="avatar">HA</div>
+        <div class="name">
+          <h1 id="site-name-en">Hamzah Ali Al‑Haidari</h1>
+          <p id="site-role-en">Cybersecurity & Network Engineer</p>
+          <h1 id="site-name-ar" style="display:none">حمزة علي الحيدري</h1>
+          <p id="site-role-ar" style="display:none">محلل أمن معلومات ومهندس شبكات</p>
+        </div>
+      </div>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>Highly motivated Cybersecurity and Network Engineer with a B.Sc. in Cybersecurity and Network Engineering from the University of Science and Technology and a Google Cybersecurity Professional Certificate. Skilled in threat analysis, incident response, network security, and penetration testing. Passionate about protecting digital systems and continuously enhancing skills in modern cyber defense.</p>
-</section>
+      <nav class="top">
+        <button class="lang-btn" id="toggle-lang">عربي</button>
+        <a class="pill" href="#contact" id="contact-pill-en">Contact</a>
+        <a class="pill" href="#contact" id="contact-pill-ar" style="display:none">تواصل</a>
+      </nav>
+    </header>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill"><strong>SOC Operations:</strong> Threat Detection, Incident Response, Security Monitoring, SIEM (Splunk/ELK)</div>
-    <div class="skill"><strong>Network Security:</strong> Firewalls, IDS/IPS, VPN, VLANs, OSPF, EIGRP</div>
-    <div class="skill"><strong>Vulnerability Management:</strong> Nmap, Nessus, Metasploit, Burp Suite, Patch Management</div>
-    <div class="skill"><strong>Operating Systems:</strong> Kali Linux, Windows Server, Windows Client</div>
-    <div class="skill"><strong>Programming:</strong> Python, Shell Scripting</div>
-    <div class="skill"><strong>Tools & Technologies:</strong> Wireshark, PyShark, OWASP ZAP, VirtualBox, Microsoft Office</div>
+    <!-- MAIN -->
+    <main>
+      <!-- LEFT COLUMN -->
+      <aside>
+        <div class="card" id="left-card-en">
+          <h3 style="margin:0 0 8px">Contact</h3>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <span class="small-muted">7.7hamza0@gmail.com</span></div>
+            <div><strong>Phone:</strong> <span class="small-muted">+967 772 765 706</span></div>
+            <div><strong>Location:</strong> <span class="small-muted">Ibb, Yemen</span></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
+            <div><strong>GitHub:</strong> <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
+          </div>
+
+          <h3 style="margin-top:16px">Key Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-item">SOC Operations — Threat Detection, Incident Response, SIEM (Splunk/ELK)</div>
+            <div class="skill-item">Network Security — Firewalls, IDS/IPS, VPN, VLANs, OSPF</div>
+            <div class="skill-item">Vulnerability Management — Nmap, Nessus, Burp Suite</div>
+            <div class="skill-item">Programming — Python, Shell Scripting</div>
+            <div class="skill-item">OS & Tools — Kali Linux, Wireshark, OWASP ZAP</div>
+          </div>
+
+          <div class="download-links">
+            <a href="resume-en.pdf" download>Download CV (EN)</a>
+            <a href="resume-ar.pdf" download>تحميل السيرة (AR)</a>
+          </div>
+        </div>
+
+        <!-- Arabic left card -->
+        <div class="card rtl" id="left-card-ar" style="display:none">
+          <h3 style="margin:0 0 8px">معلومات الاتصال</h3>
+          <div class="contact-list">
+            <div><strong>البريد:</strong> <span class="small-muted">7.7hamza0@gmail.com</span></div>
+            <div><strong>الهاتف:</strong> <span class="small-muted">+967 772 765 706</span></div>
+            <div><strong>الموقع:</strong> <span class="small-muted">إب، اليمن</span></div>
+            <div><strong>لينكدإن:</strong> <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
+            <div><strong>GitHub:</strong> <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
+          </div>
+
+          <h3 style="margin-top:16px">المهارات الأساسية</h3>
+          <div class="skills-grid">
+            <div class="skill-item">عمليات SOC — كشف التهديدات، الاستجابة للحوادث، SIEM (Splunk/ELK)</div>
+            <div class="skill-item">أمن الشبكات — جدران الحماية، IDS/IPS، VPN، VLAN، OSPF</div>
+            <div class="skill-item">إدارة الثغرات — Nmap، Nessus، Burp Suite</div>
+            <div class="skill-item">البرمجة — Python، Shell Scripting</div>
+            <div class="skill-item">أنظمة وأدوات — Kali Linux، Wireshark، OWASP ZAP</div>
+          </div>
+
+          <div class="download-links">
+            <a href="resume-en.pdf" download>Download CV (EN)</a>
+            <a href="resume-ar.pdf" download>تحميل السيرة (AR)</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN -->
+      <section>
+        <!-- ABOUT -->
+        <article class="card section" id="about-en">
+          <h2>About Me</h2>
+          <p class="muted">SOC Analyst (Tier 1) with a polished academic background and hands-on training via TryHackMe and Coursera’s Google Cybersecurity Professional program. Proficient in SIEM monitoring, incident triage, log analysis, and Python scripting. Academic excellence in Cybersecurity and a commitment to continuous learning.</p>
+        </article>
+
+        <article class="card section rtl" id="about-ar" style="display:none">
+          <h2>نبذة عني</h2>
+          <p class="muted">محلل مركز عمليات أمنية (SOC) ملتزم، أتمتع بخبرة متخصصة في مراقبة التهديدات وعمليات الأمن السيبراني، ومتقن مراقبة SIEM، فرز الحوادث، وتحليل السجلات لاكتشاف الأنشطة الخبيثة والاستجابة لها. ماهر في برمجة بايثون لأتمتة الأمن السيبراني، وأمتلك معرفة شاملة بإجراءات الاستجابة للحوادث والخبرة العملية في تحليل التهديدات.</p>
+          <p class="muted">أتمتع بخلفية أكاديمية قوية مدعومة بتدريب عملي عبر TryHackMe وبرنامج Google Cybersecurity Professional Certificate، مع قدرة مثبتة على الكشف عن التهديدات والحفاظ على موقف أمني متين. ملتزم بـ التعلم المستمر وتطوير مهاراتي التحليلية، وأسعى لتقديم خبرتي الفنية في بيئة SOC ديناميكية ودعم أهداف المنظمة في حماية الأنظمة الرقمية وتعزيز الدفاعات ضد التهديدات السيبرانية المتطورة.</p>
+        </article>
+
+        <!-- EXPERIENCE -->
+        <article class="card section" id="experience-en">
+          <h2>Experience</h2>
+
+          <div class="experience-item">
+            <h3>Freelance Network & Cybersecurity Engineer — Remote</h3>
+            <div class="meta">Apr 2023 – Present</div>
+            <ul class="muted">
+              <li>Designed and secured network systems, performed threat detection, and conducted vulnerability assessments.</li>
+              <li>Managed malware and unauthorized access incidents ensuring system resilience.</li>
+              <li>Worked on penetration testing, packet analysis, and AI-based attack detection projects.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Network Operations Field Trainee — شركة الاتصالات اليمنية, Ibb, Yemen</h3>
+            <div class="meta">June 2024</div>
+            <ul class="muted">
+              <li>Gained hands-on experience with 4G infrastructure, routing protocols, and network configuration.</li>
+              <li>Assisted in maintaining telecom systems and troubleshooting network issues to ensure service continuity.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card section rtl" id="experience-ar" style="display:none">
+          <h2>الخبرة العملية</h2>
+
+          <div class="experience-item rtl">
+            <h3>مهندس شبكات وأمن سيبراني حر (عن بُعد)</h3>
+            <div class="meta">أبريل 2023 – حتى الآن</div>
+            <ul class="muted">
+              <li>تصميم وتأمين أنظمة الشبكات، وتنفيذ تحليل السجلات للكشف عن التهديدات وإجراء تقييمات الثغرات.</li>
+              <li>التعامل مع حوادث البرمجيات الخبيثة ومحاولات الوصول غير المصرح بها وضمان استعادة الأنظمة.</li>
+              <li>تنفيذ اختبارات اختراق، وتحليل الحزم، وبناء حلول كشف تعتمد على الذكاء الاصطناعي.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item rtl">
+            <h3>متدرب تشغيل شبكات — شركة الاتصالات اليمنية، إب</h3>
+            <div class="meta">يونيو 2024</div>
+            <ul class="muted">
+              <li>اكتساب خبرة عملية في بنية شبكات الجيل الرابع (4G) وبروتوكولات التوجيه وإعداد الشبكات.</li>
+              <li>المساعدة في صيانة أنظمة الاتصالات وحل المشكلات لضمان استمرارية الخدمة.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- PROJECTS -->
+        <article class="card section" id="projects-en">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <strong>DoS/DDoS Attack Detection in Networks</strong>
+              <div class="small-muted">AI-based model for real-time traffic monitoring and attack classification.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" target="_blank">View on GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>Web Application Vulnerability Scan & Remediation</strong>
+              <div class="small-muted">Security testing using OWASP ZAP and Burp Suite; detailed remediation report.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" target="_blank">View Report (GitHub)</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>Secure Website Development</strong>
+              <div class="small-muted">Secure coding to prevent SQLi and XSS.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Web-Secure" target="_blank">View on GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>SOC Simulator – Phishing Investigation</strong>
+              <div class="small-muted">Phishing detection, alert triage, evidence collection, and IR docs.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Introduction_to_Phishing" target="_blank">View on GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>Secure Network Design</strong>
+              <div class="small-muted">LAN/WAN design with VLAN segmentation and custom firewall rules.</div>
+              <div style="margin-top:8px"><span class="small-muted">Design files available on request</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card section rtl" id="projects-ar" style="display:none">
+          <h2>المشاريع</h2>
+          <div class="project-grid rtl">
+            <div class="project-card">
+              <strong>كشف هجمات DoS/DDoS في الشبكات</strong>
+              <div class="small-muted">نموذج ذكاء اصطناعي لمراقبة حركة المرور وتحديد الهجمات في الوقت الفعلي.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" target="_blank">عرض على GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>تقرير فحص ثغرات تطبيق ويب (OWASP ZAP)</strong>
+              <div class="small-muted">اختبارات أمنية شاملة وتقرير إصلاح مفصل.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" target="_blank">عرض التقرير</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>تطوير موقع ويب آمن</strong>
+              <div class="small-muted">منع SQLi و XSS عبر ممارسات الترميز الآمن.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Web-Secure" target="_blank">عرض على GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>محاكاة SOC – تحقيق تصيّد</strong>
+              <div class="small-muted">كشف التصيد، فرز التنبيهات، جمع الأدلة، وتوثيق الاستجابة للحوادث.</div>
+              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Introduction_to_Phishing" target="_blank">عرض على GitHub</a></div>
+            </div>
+
+            <div class="project-card">
+              <strong>تصميم شبكة آمنة</strong>
+              <div class="small-muted">تصميم LAN/WAN مع تقسيم VLAN وقواعد جدار ناري مخصصة.</div>
+              <div style="margin-top:8px"><span class="small-muted">ملفات التصميم متاحة عند الطلب</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EDUCATION -->
+        <article class="card section" id="education-en">
+          <h2>Education</h2>
+          <div class="muted"><strong>B.Sc. in Cybersecurity & Network Engineering</strong> — University of Science and Technology | 2021–2025</div>
+          <div class="muted" style="margin-top:8px"><strong>Graduation Project:</strong> Detecting DDoS Attacks in IoT Networks Using AI</div>
+          <div class="muted" style="margin-top:8px"><strong>Diploma:</strong> English Language — SpeakNow Institute (2019)</div>
+          <div class="muted" style="margin-top:6px"><strong>Diploma:</strong> ICDL Foundation — Institute of Science and Technology (2019)</div>
+        </article>
+
+        <article class="card section rtl" id="education-ar" style="display:none">
+          <h2>التعليم</h2>
+          <div class="muted"><strong>بكالوريوس في الأمن السيبراني وهندسة الشبكات</strong> — جامعة العلوم والتكنولوجيا | 2021–2025</div>
+          <div class="muted" style="margin-top:8px"><strong>مشروع التخرج:</strong> اكتشاف هجمات DDoS في شبكات إنترنت الأشياء باستخدام الذكاء الاصطناعي</div>
+          <div class="muted" style="margin-top:8px"><strong>دبلوم:</strong> اللغة الإنجليزية — معهد SpeakNow (2019)</div>
+          <div class="muted" style="margin-top:6px"><strong>دبلوم:</strong> ICDL — معهد العلوم والتكنولوجيا (2019)</div>
+        </article>
+
+        <!-- CERTIFICATIONS (compact) -->
+        <article class="card section" id="certs-en">
+          <h2>Certifications</h2>
+          <div class="muted">Google Cybersecurity Professional Certificate — Jun 2025</div>
+          <div class="muted">Cybersecurity for Everyone — University of Maryland — Feb 2025</div>
+          <div class="muted">Career Path in Cybersecurity — Edraak — Jun 2024</div>
+          <div class="muted">Introduction to Networking — Edraak — Jun 2024</div>
+          <div class="muted">Python Essentials 1 — Cisco — Nov 2023</div>
+        </article>
+
+        <article class="card section rtl" id="certs-ar" style="display:none">
+          <h2>الشهادات</h2>
+          <div class="muted">شهادة Google Cybersecurity Professional — يونيو 2025</div>
+          <div class="muted">دورة Cybersecurity for Everyone — جامعة ماريلاند — فبراير 2025</div>
+          <div class="muted">Career Path in Cybersecurity — إدراك — يونيو 2024</div>
+          <div class="muted">Introduction to Networking — إدراك — يونيو 2024</div>
+          <div class="muted">Python Essentials 1 — سيسكو — نوفمبر 2023</div>
+        </article>
+
+        <!-- CONTACT SECTION (detailed) -->
+        <article class="card section" id="contact">
+          <h2>Contact</h2>
+          <div class="muted">Email: <a href="mailto:7.7hamza0@gmail.com">7.7hamza0@gmail.com</a></div>
+          <div class="muted">Phone: +967 772 765 706</div>
+          <div class="muted">LinkedIn: <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
+          <div class="muted">GitHub: <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
+        </article>
+
+        <footer>
+          <div class="small-muted">© 2025 Hamzah Ali Al‑Haidari — All rights reserved</div>
+        </footer>
+      </section>
+    </main>
   </div>
-</section>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <div>
-    <h3>Freelance Network & Cybersecurity Engineer | Remote | Apr 2023 – Present</h3>
-    <ul>
-      <li>Designed and secured network systems, performed threat detection, and vulnerability assessments.</li>
-      <li>Managed malware and unauthorized access incidents ensuring system resilience.</li>
-      <li>Worked on penetration testing, packet analysis, and AI-based attack detection projects.</li>
-    </ul>
-    <h3>Network Operations Field Trainee | Yemen Telecom, Ibb, Yemen | Jun 2024</h3>
-    <ul>
-      <li>Gained hands-on experience with 4G infrastructure, routing protocols, and network configuration.</li>
-      <li>Assisted in maintaining telecom systems and troubleshooting network issues.</li>
-    </ul>
-  </div>
-</section>
+  <script>
+    // Language toggle
+    const toggle = document.getElementById('toggle-lang');
+    const enEls = {
+      left: document.getElementById('left-card-en'),
+      about: document.getElementById('about-en'),
+      experience: document.getElementById('experience-en'),
+      projects: document.getElementById('projects-en'),
+      education: document.getElementById('education-en'),
+      certs: document.getElementById('certs-en'),
+      name: document.getElementById('site-name-en'),
+      role: document.getElementById('site-role-en'),
+      contactPill: document.getElementById('contact-pill-en')
+    };
+    const arEls = {
+      left: document.getElementById('left-card-ar'),
+      about: document.getElementById('about-ar'),
+      experience: document.getElementById('experience-ar'),
+      projects: document.getElementById('projects-ar'),
+      education: document.getElementById('education-ar'),
+      certs: document.getElementById('certs-ar'),
+      name: document.getElementById('site-name-ar'),
+      role: document.getElementById('site-role-ar'),
+      contactPill: document.getElementById('contact-pill-ar')
+    };
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project"><strong>DoS/DDoS Attack Detection in Networks:</strong> AI-based model for real-time traffic monitoring and attack identification. <br><a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" target="_blank">View on GitHub</a></div>
-    <div class="project"><strong>Web Application Vulnerability Scan & Remediation:</strong> Security testing using OWASP ZAP and Burp Suite; delivered remediation reports. <br><a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" target="_blank">View Report (GitHub)</a></div>
-    <div class="project"><strong>Secure Website Development:</strong> Implemented secure coding practices to prevent SQL Injection and XSS vulnerabilities. <br><a href="https://github.com/Hamzzaal/Web-Secure" target="_blank">View on GitHub</a></div>
-    <div class="project"><strong>SOC Simulator – Phishing Investigation:</strong> Hands-on phishing detection, alert triage, evidence collection, and IR documentation. <br><a href="https://github.com/Hamzzaal/Introduction_to_Phishing" target="_blank">View on GitHub</a></div>
-    <div class="project"><strong>Secure Network Design:</strong> Configured LAN/WAN infrastructure with VLANs and custom firewall rules for internal isolation. <br>Project files and diagrams available on request.</div>
-  </div>
-</section>
+    let isArabic = false;
+    toggle.addEventListener('click', () => {
+      isArabic = !isArabic;
+      // toggle left column
+      enEls.left.style.display = isArabic ? 'none' : 'block';
+      arEls.left.style.display = isArabic ? 'block' : 'none';
+      // toggle right sections
+      enEls.about.style.display = isArabic ? 'none' : 'block';
+      arEls.about.style.display = isArabic ? 'block' : 'none';
+      enEls.experience.style.display = isArabic ? 'none' : 'block';
+      arEls.experience.style.display = isArabic ? 'block' : 'none';
+      enEls.projects.style.display = isArabic ? 'none' : 'block';
+      arEls.projects.style.display = isArabic ? 'block' : 'none';
+      enEls.education.style.display = isArabic ? 'none' : 'block';
+      arEls.education.style.display = isArabic ? 'block' : 'none';
+      enEls.certs.style.display = isArabic ? 'none' : 'block';
+      arEls.certs.style.display = isArabic ? 'block' : 'none';
+      // header names
+      enEls.name.style.display = isArabic ? 'none' : 'block';
+      enEls.role.style.display = isArabic ? 'none' : 'block';
+      arEls.name.style.display = isArabic ? 'block' : 'none';
+      arEls.role.style.display = isArabic ? 'block' : 'none';
+      // contact pill
+      enEls.contactPill.style.display = isArabic ? 'none' : 'inline-block';
+      arEls.contactPill.style.display = isArabic ? 'inline-block' : 'none';
 
-<section id="education">
-  <h2>Education</h2>
-  <p><strong>B.Sc. Cybersecurity & Network Engineering</strong> — University of Science and Technology | 2021–2025</p>
-  <p><strong>Diploma in English Language</strong> — SpeakNow Institute | 2019</p>
-  <p><strong>Diploma in ICDL Foundation</strong> — Institute of Science and Technology | 2019</p>
-</section>
+      // change button label
+      toggle.textContent = isArabic ? 'EN' : 'عربي';
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: 7.7hamza0@gmail.com</p>
-  <p>Phone: +967772765706</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></p>
-  <p>GitHub: <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></p>
-</section>
+      // apply dir to body for correct alignment
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+      document.body.dir = isArabic ? 'rtl' : 'ltr';
+    });
 
-<footer>
-  <p>&copy; 2025 Hamzah Ali Al-Haidari. All rights reserved.</p>
-</footer>
-
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      })
+    });
+  </script>
 </body>
 </html>
