@@ -1,400 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hamzah Ali Al‑Haidari — Cybersecurity & Network Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamzah Ali Al-Haidari - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #06d6a0;
+            --transition: all 0.3s ease;
+        }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#00bcd4;
-      --muted:#9aa4b2;
-      --glass: rgba(255,255,255,0.03);
-      --white:#e6eef6;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(180deg,#071021 0%, #0f1724 60%);color:var(--white);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none}
-    .container{max-width:1100px;margin:30px auto;padding:24px}
-    header{display:flex;gap:20px;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:16px;align-items:center}
-    .avatar{
-      width:86px;height:86px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6dd5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#031118;font-size:28px;box-shadow:0 6px 24px rgba(0,0,0,.6)
-    }
-    .name{line-height:1}
-    .name h1{font-size:20px;margin:0}
-    .name p{margin:2px 0 0;color:var(--muted);font-size:13px}
-    nav.top{display:flex;gap:10px;align-items:center}
-    nav.top button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
-    .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px;border-radius:8px;cursor:pointer}
-    main{margin-top:26px;display:grid;grid-template-columns:380px 1fr;gap:24px}
-    /* Left column */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.6);border:1px solid rgba(255,255,255,0.02)}
-    .contact-list{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
-    .pill{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);border:1px solid rgba(0,0,0,0.2)}
-    .skills-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;margin-top:12px}
-    .skill-item{background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:10px;border-radius:8px;font-size:13px;color:var(--white);border:1px solid rgba(255,255,255,0.02)}
-    .download-links{display:flex;gap:10px;margin-top:12px}
-    .download-links a{background:var(--accent);color:#031118;padding:8px 12px;border-radius:8px;font-weight:700}
-    /* Right column */
-    .section{margin-bottom:18px}
-    .section h2{margin:0 0 12px;font-size:18px;color:var(--accent);display:flex;align-items:center;gap:10px}
-    .muted{color:var(--muted);font-size:14px}
-    .experience-item{background:transparent;border-left:3px solid rgba(255,255,255,0.03);padding:10px 14px;margin-bottom:12px;border-radius:6px}
-    .experience-item h3{margin:0;font-size:15px}
-    .meta{font-size:13px;color:var(--muted);margin-top:6px}
-    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-    footer{margin-top:26px;padding:12px;text-align:center;color:var(--muted);font-size:13px}
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* Responsive */
-    @media (max-width:980px){
-      main{grid-template-columns:1fr; padding-bottom:40px}
-      .avatar{width:72px;height:72px}
-    }
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-    /* Arabic support when active */
-    .rtl{direction:rtl;font-family:'Cairo',sans-serif}
-    .small-muted{font-size:12px;color:var(--muted)}
-    .tag{display:inline-block;background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:6px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
-  </style>
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><path fill="white" d="M500,100 C700,50 800,300 900,400 C1000,500 800,700 600,800 C400,900 200,800 100,600 C0,400 200,200 300,100 C400,0 300,150 500,100 Z"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: #e2e8f0;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+        }
+
+        .profile-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -50px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .timeline-content .date {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .timeline-content .date i {
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #f1f5f9;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            background: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 180px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .project-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            flex-grow: 1;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+            gap: 10px;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 200px;
+            transition: var(--transition);
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Languages Section */
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 150px;
+            transition: var(--transition);
+        }
+
+        .language-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::before {
+                left: -40px !important;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container" id="app">
-    <!-- HEADER -->
-    <header>
-      <div class="brand">
-        <div class="avatar">HA</div>
-        <div class="name">
-          <h1 id="site-name-en">Hamzah Ali Al‑Haidari</h1>
-          <p id="site-role-en">Cybersecurity & Network Engineer</p>
-          <h1 id="site-name-ar" style="display:none">حمزة علي الحيدري</h1>
-          <p id="site-role-ar" style="display:none">محلل أمن معلومات ومهندس شبكات</p>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">Hamzah Al-Haidari</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-
-      <nav class="top">
-        <button class="lang-btn" id="toggle-lang">عربي</button>
-        <a class="pill" href="#contact" id="contact-pill-en">Contact</a>
-        <a class="pill" href="#contact" id="contact-pill-ar" style="display:none">تواصل</a>
-      </nav>
     </header>
 
-    <!-- MAIN -->
-    <main>
-      <!-- LEFT COLUMN -->
-      <aside>
-        <div class="card" id="left-card-en">
-          <h3 style="margin:0 0 8px">Contact</h3>
-          <div class="contact-list">
-            <div><strong>Email:</strong> <span class="small-muted">7.7hamza0@gmail.com</span></div>
-            <div><strong>Phone:</strong> <span class="small-muted">+967 772 765 706</span></div>
-            <div><strong>Location:</strong> <span class="small-muted">Ibb, Yemen</span></div>
-            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
-            <div><strong>GitHub:</strong> <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
-          </div>
-
-          <h3 style="margin-top:16px">Key Skills</h3>
-          <div class="skills-grid">
-            <div class="skill-item">SOC Operations — Threat Detection, Incident Response, SIEM (Splunk/ELK)</div>
-            <div class="skill-item">Network Security — Firewalls, IDS/IPS, VPN, VLANs, OSPF</div>
-            <div class="skill-item">Vulnerability Management — Nmap, Nessus, Burp Suite</div>
-            <div class="skill-item">Programming — Python, Shell Scripting</div>
-            <div class="skill-item">OS & Tools — Kali Linux, Wireshark, OWASP ZAP</div>
-          </div>
-
-          <div class="download-links">
-            <a href="resume-en.pdf" download>Download CV (EN)</a>
-            <a href="resume-ar.pdf" download>تحميل السيرة (AR)</a>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hamzah Ali Al-Haidari</h1>
+                <h2>Network & Cybersecurity Engineer | Cybersecurity Analyst</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ibb, Yemen</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+967 772 765 706</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>7.7hamza0@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://tryhackme.com/p/ETH.CYBER" class="social-link" target="_blank">
+                        <i class="fas fa-shield-alt"></i>
+                    </a>
+                    <a href="https://www.credly.com/users/hamzah-alhaidari" class="social-link" target="_blank">
+                        <i class="fas fa-award"></i>
+                    </a>
+                    <a href="https://github.com/Hamzzaal" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Arabic left card -->
-        <div class="card rtl" id="left-card-ar" style="display:none">
-          <h3 style="margin:0 0 8px">معلومات الاتصال</h3>
-          <div class="contact-list">
-            <div><strong>البريد:</strong> <span class="small-muted">7.7hamza0@gmail.com</span></div>
-            <div><strong>الهاتف:</strong> <span class="small-muted">+967 772 765 706</span></div>
-            <div><strong>الموقع:</strong> <span class="small-muted">إب، اليمن</span></div>
-            <div><strong>لينكدإن:</strong> <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
-            <div><strong>GitHub:</strong> <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
-          </div>
-
-          <h3 style="margin-top:16px">المهارات الأساسية</h3>
-          <div class="skills-grid">
-            <div class="skill-item">عمليات SOC — كشف التهديدات، الاستجابة للحوادث، SIEM (Splunk/ELK)</div>
-            <div class="skill-item">أمن الشبكات — جدران الحماية، IDS/IPS، VPN، VLAN، OSPF</div>
-            <div class="skill-item">إدارة الثغرات — Nmap، Nessus، Burp Suite</div>
-            <div class="skill-item">البرمجة — Python، Shell Scripting</div>
-            <div class="skill-item">أنظمة وأدوات — Kali Linux، Wireshark، OWASP ZAP</div>
-          </div>
-
-          <div class="download-links">
-            <a href="resume-en.pdf" download>Download CV (EN)</a>
-            <a href="resume-ar.pdf" download>تحميل السيرة (AR)</a>
-          </div>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Summary</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user"></i>
+                        <p>Professional Photo</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Dedicated SOC Analyst</h3>
+                    <p>Dedicated SOC Analyst with specialized experience in threat monitoring and cybersecurity operations. Proficient in SIEM monitoring, incident triaging, and log analysis to detect and respond to malicious activities.</p>
+                    <p>Skilled in Python automation for cybersecurity and knowledgeable in incident response procedures and threat analysis. Strong academic background complemented by hands-on training via TryHackMe and the Google Cybersecurity Professional Certificate.</p>
+                    <p>Proven ability to detect threats, maintain a secure environment, and continuously enhance analytical skills. Seeking to contribute technical expertise in a dynamic SOC environment to strengthen organizational defenses against evolving cyber threats.</p>
+                </div>
+            </div>
         </div>
-      </aside>
+    </section>
 
-      <!-- RIGHT COLUMN -->
-      <section>
-        <!-- ABOUT -->
-        <article class="card section" id="about-en">
-          <h2>About Me</h2>
-          <p class="muted">SOC Analyst (Tier 1) with a polished academic background and hands-on training via TryHackMe and Coursera’s Google Cybersecurity Professional program. Proficient in SIEM monitoring, incident triage, log analysis, and Python scripting. Academic excellence in Cybersecurity and a commitment to continuous learning.</p>
-        </article>
-
-        <article class="card section rtl" id="about-ar" style="display:none">
-          <h2>نبذة عني</h2>
-          <p class="muted">محلل مركز عمليات أمنية (SOC) ملتزم، أتمتع بخبرة متخصصة في مراقبة التهديدات وعمليات الأمن السيبراني، ومتقن مراقبة SIEM، فرز الحوادث، وتحليل السجلات لاكتشاف الأنشطة الخبيثة والاستجابة لها. ماهر في برمجة بايثون لأتمتة الأمن السيبراني، وأمتلك معرفة شاملة بإجراءات الاستجابة للحوادث والخبرة العملية في تحليل التهديدات.</p>
-          <p class="muted">أتمتع بخلفية أكاديمية قوية مدعومة بتدريب عملي عبر TryHackMe وبرنامج Google Cybersecurity Professional Certificate، مع قدرة مثبتة على الكشف عن التهديدات والحفاظ على موقف أمني متين. ملتزم بـ التعلم المستمر وتطوير مهاراتي التحليلية، وأسعى لتقديم خبرتي الفنية في بيئة SOC ديناميكية ودعم أهداف المنظمة في حماية الأنظمة الرقمية وتعزيز الدفاعات ضد التهديدات السيبرانية المتطورة.</p>
-        </article>
-
-        <!-- EXPERIENCE -->
-        <article class="card section" id="experience-en">
-          <h2>Experience</h2>
-
-          <div class="experience-item">
-            <h3>Freelance Network & Cybersecurity Engineer — Remote</h3>
-            <div class="meta">Apr 2023 – Present</div>
-            <ul class="muted">
-              <li>Designed and secured network systems, performed threat detection, and conducted vulnerability assessments.</li>
-              <li>Managed malware and unauthorized access incidents ensuring system resilience.</li>
-              <li>Worked on penetration testing, packet analysis, and AI-based attack detection projects.</li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <h3>Network Operations Field Trainee — شركة الاتصالات اليمنية, Ibb, Yemen</h3>
-            <div class="meta">June 2024</div>
-            <ul class="muted">
-              <li>Gained hands-on experience with 4G infrastructure, routing protocols, and network configuration.</li>
-              <li>Assisted in maintaining telecom systems and troubleshooting network issues to ensure service continuity.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card section rtl" id="experience-ar" style="display:none">
-          <h2>الخبرة العملية</h2>
-
-          <div class="experience-item rtl">
-            <h3>مهندس شبكات وأمن سيبراني حر (عن بُعد)</h3>
-            <div class="meta">أبريل 2023 – حتى الآن</div>
-            <ul class="muted">
-              <li>تصميم وتأمين أنظمة الشبكات، وتنفيذ تحليل السجلات للكشف عن التهديدات وإجراء تقييمات الثغرات.</li>
-              <li>التعامل مع حوادث البرمجيات الخبيثة ومحاولات الوصول غير المصرح بها وضمان استعادة الأنظمة.</li>
-              <li>تنفيذ اختبارات اختراق، وتحليل الحزم، وبناء حلول كشف تعتمد على الذكاء الاصطناعي.</li>
-            </ul>
-          </div>
-
-          <div class="experience-item rtl">
-            <h3>متدرب تشغيل شبكات — شركة الاتصالات اليمنية، إب</h3>
-            <div class="meta">يونيو 2024</div>
-            <ul class="muted">
-              <li>اكتساب خبرة عملية في بنية شبكات الجيل الرابع (4G) وبروتوكولات التوجيه وإعداد الشبكات.</li>
-              <li>المساعدة في صيانة أنظمة الاتصالات وحل المشكلات لضمان استمرارية الخدمة.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- PROJECTS -->
-        <article class="card section" id="projects-en">
-          <h2>Projects</h2>
-          <div class="project-grid">
-            <div class="project-card">
-              <strong>DoS/DDoS Attack Detection in Networks</strong>
-              <div class="small-muted">AI-based model for real-time traffic monitoring and attack classification.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" target="_blank">View on GitHub</a></div>
+    <!-- Experience & Education Section -->
+    <section id="experience" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience & Education</h2>
             </div>
-
-            <div class="project-card">
-              <strong>Web Application Vulnerability Scan & Remediation</strong>
-              <div class="small-muted">Security testing using OWASP ZAP and Burp Suite; detailed remediation report.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" target="_blank">View Report (GitHub)</a></div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Network & Cybersecurity Engineer</h3>
+                        <div class="date"><i class="far fa-calendar-alt"></i> July 2025 – Present</div>
+                        <p>National University, Ibb, Yemen</p>
+                        <p>Conducted practical lectures and hands-on labs for 3rd & 4th-year students in networking and cybersecurity. Developed lab content and exercises to enhance student understanding of network infrastructure and information security.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>SOC Simulator - Threat Analysis</h3>
+                        <div class="date"><i class="far fa-calendar-alt"></i> September 2025</div>
+                        <p>ETH.CYBER</p>
+                        <p>Participated in a realistic SOC simulation environment that replicated real-world cyber incidents. The simulation included tools such as Splunk SIEM, Wireshark, PowerShell, and VirusTotal for analyzing threats, investigating suspicious files, and validating indicators of compromise.</p>
+                        <p>Conducted in-depth threat investigations, classified alerts, and correlated digital evidence to identify and respond to attacks effectively. This experience strengthened my skills in digital forensics, technical analysis, and real-time incident response within a dynamic SOC environment.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Cybersecurity and Networking</h3>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2021 – 2025</div>
+                        <p>University of Science & Technology, Yemen</p>
+                        <p>Graduation Project: Detection of DDoS attacks in IoT networks using Artificial Intelligence. Studied computer networking fundamentals, system administration, and cybersecurity.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <div class="date"><i class="far fa-calendar-alt"></i> June 2024</div>
+                        <p>General Telecommunications Corporation, Ibb, Yemen</p>
+                        <p>Monitored network endpoints across the governorate to detect suspicious activity and resolve connectivity/security issues. Enhanced internal network security and analyzed logs to ensure system stability and reliability.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Freelance Network & Cybersecurity Engineer</h3>
+                        <div class="date"><i class="far fa-calendar-alt"></i> April 2023 – Present</div>
+                        <p>Remote</p>
+                        <p>Designed and secured network systems, performed threat analysis, and conducted vulnerability assessments. Developed real-time intrusion detection systems using AI techniques.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-              <strong>Secure Website Development</strong>
-              <div class="small-muted">Secure coding to prevent SQLi and XSS.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Web-Secure" target="_blank">View on GitHub</a></div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
             </div>
-
-            <div class="project-card">
-              <strong>SOC Simulator – Phishing Investigation</strong>
-              <div class="small-muted">Phishing detection, alert triage, evidence collection, and IR docs.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Introduction_to_Phishing" target="_blank">View on GitHub</a></div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Threat Monitoring & Analysis</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">SOC</div>
+                        <div class="skill-item">SIEM</div>
+                        <div class="skill-item">Incident Response</div>
+                        <div class="skill-item">Log Analysis</div>
+                        <div class="skill-item">Splunk</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Network Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Firewalls</div>
+                        <div class="skill-item">IDS/IPS</div>
+                        <div class="skill-item">VLAN</div>
+                        <div class="skill-item">VPN</div>
+                        <div class="skill-item">OSPF</div>
+                        <div class="skill-item">Wireshark</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Penetration Testing & Application Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">OWASP ZAP</div>
+                        <div class="skill-item">Burp Suite</div>
+                        <div class="skill-item">Metasploit</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">C++</div>
+                        <div class="skill-item">PHP</div>
+                        <div class="skill-item">PowerShell</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Linux (Kali, Ubuntu)</div>
+                        <div class="skill-item">Windows</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Security Data Analysis & AI Applications</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Security Data Analytics</div>
+                        <div class="skill-item">Attack Detection</div>
+                        <div class="skill-item">Digital Forensics</div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-              <strong>Secure Network Design</strong>
-              <div class="small-muted">LAN/WAN design with VLAN segmentation and custom firewall rules.</div>
-              <div style="margin-top:8px"><span class="small-muted">Design files available on request</span></div>
+    <!-- Projects Section -->
+    <section id="projects" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
             </div>
-          </div>
-        </article>
-
-        <article class="card section rtl" id="projects-ar" style="display:none">
-          <h2>المشاريع</h2>
-          <div class="project-grid rtl">
-            <div class="project-card">
-              <strong>كشف هجمات DoS/DDoS في الشبكات</strong>
-              <div class="small-muted">نموذج ذكاء اصطناعي لمراقبة حركة المرور وتحديد الهجمات في الوقت الفعلي.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" target="_blank">عرض على GitHub</a></div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>SOC Simulator - Threat Analysis</h3>
+                        <p>Realistic SOC simulation environment replicating real-world cyber incidents using Splunk SIEM, Wireshark, PowerShell, and VirusTotal for threat analysis and incident response.</p>
+                        <a href="https://hamzzaal.github.io/SOC-Simulator-Threat-Analysis/" class="project-link" target="_blank">
+                            <span>View Project</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Introduction to Phishing – SOC Simulator</h3>
+                        <p>Simulated phishing attack scenarios, analyzed alerts, gathered evidence, and documented incident response steps in a Security Operations Center environment.</p>
+                        <a href="https://github.com/Hamzzaal/Introduction_to_Phishing/blob/main/README.md" class="project-link" target="_blank">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>OWASP ZAP Vulnerability Assessment Report</h3>
+                        <p>Conducted comprehensive security assessment using OWASP ZAP & Burp Suite, producing detailed vulnerability analysis and remediation recommendations.</p>
+                        <a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" class="project-link" target="_blank">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Secure Web Development</h3>
+                        <p>Developed a secure website protected against SQL Injection and XSS by implementing secure coding practices, input validation, and security headers.</p>
+                        <a href="https://github.com/Hamzzaal/Web-Secure" class="project-link" target="_blank">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Intelligent DoS Detection System</h3>
+                        <p>Developed a machine learning model for real-time detection and classification of DDoS attacks through network traffic behavior analysis.</p>
+                        <a href="https://github.com/Hamzzaal/Intelligent-Denial-of-Service-Detection-System" class="project-link" target="_blank">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-              <strong>تقرير فحص ثغرات تطبيق ويب (OWASP ZAP)</strong>
-              <div class="small-muted">اختبارات أمنية شاملة وتقرير إصلاح مفصل.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/OWASP-ZAP-Vulnerability-Assessment-Report" target="_blank">عرض التقرير</a></div>
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Courses</h2>
             </div>
-
-            <div class="project-card">
-              <strong>تطوير موقع ويب آمن</strong>
-              <div class="small-muted">منع SQLi و XSS عبر ممارسات الترميز الآمن.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Web-Secure" target="_blank">عرض على GitHub</a></div>
+            
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <i class="fab fa-linux"></i>
+                    <h3>LFS101: Introduction to Linux</h3>
+                    <p>The Linux Foundation</p>
+                    <p>Issued Aug 6, 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fab fa-google"></i>
+                    <h3>Google Cybersecurity Professional Certificate</h3>
+                    <p>Coursera</p>
+                    <p>Issued Jun 21, 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Cybersecurity for Everyone</h3>
+                    <p>University of Maryland / Google</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity Fundamentals</h3>
+                    <p>Google</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python Essentials 1</h3>
+                    <p>Cisco</p>
+                    <p>Issued Nov 26, 2023</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Junior Cybersecurity Analyst Career Path</h3>
+                    <p>Cisco</p>
+                    <p>Issued Aug 12, 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>CCNA</h3>
+                    <p>General Institute of Communications</p>
+                </div>
+                
+                <div class="cert-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>ICDL & Microsoft Office Specialist</h3>
+                    <p>ICSL</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-              <strong>محاكاة SOC – تحقيق تصيّد</strong>
-              <div class="small-muted">كشف التصيد، فرز التنبيهات، جمع الأدلة، وتوثيق الاستجابة للحوادث.</div>
-              <div style="margin-top:8px"><a href="https://github.com/Hamzzaal/Introduction_to_Phishing" target="_blank">عرض على GitHub</a></div>
+    <!-- Achievements Section -->
+    <section id="achievements" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
             </div>
-
-            <div class="project-card">
-              <strong>تصميم شبكة آمنة</strong>
-              <div class="small-muted">تصميم LAN/WAN مع تقسيم VLAN وقواعد جدار ناري مخصصة.</div>
-              <div style="margin-top:8px"><span class="small-muted">ملفات التصميم متاحة عند الطلب</span></div>
+            
+            <div class="achievements">
+                <div class="achievement-item">
+                    <h3>Top 1%</h3>
+                    <p>TryHackMe Global Rank</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>28</h3>
+                    <p>TryHackMe Badges</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>299</h3>
+                    <p>TryHackMe Rooms Completed</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>11</h3>
+                    <p>Credly Badges</p>
+                </div>
             </div>
-          </div>
-        </article>
+        </div>
+    </section>
 
-        <!-- EDUCATION -->
-        <article class="card section" id="education-en">
-          <h2>Education</h2>
-          <div class="muted"><strong>B.Sc. in Cybersecurity & Network Engineering</strong> — University of Science and Technology | 2021–2025</div>
-          <div class="muted" style="margin-top:8px"><strong>Graduation Project:</strong> Detecting DDoS Attacks in IoT Networks Using AI</div>
-          <div class="muted" style="margin-top:8px"><strong>Diploma:</strong> English Language — SpeakNow Institute (2019)</div>
-          <div class="muted" style="margin-top:6px"><strong>Diploma:</strong> ICDL Foundation — Institute of Science and Technology (2019)</div>
-        </article>
+    <!-- Languages Section -->
+    <section style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Languages</h2>
+            </div>
+            
+            <div class="languages">
+                <div class="language-item">
+                    <h3>Arabic</h3>
+                    <p>Native</p>
+                </div>
+                <div class="language-item">
+                    <h3>English</h3>
+                    <p>Very Good</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <article class="card section rtl" id="education-ar" style="display:none">
-          <h2>التعليم</h2>
-          <div class="muted"><strong>بكالوريوس في الأمن السيبراني وهندسة الشبكات</strong> — جامعة العلوم والتكنولوجيا | 2021–2025</div>
-          <div class="muted" style="margin-top:8px"><strong>مشروع التخرج:</strong> اكتشاف هجمات DDoS في شبكات إنترنت الأشياء باستخدام الذكاء الاصطناعي</div>
-          <div class="muted" style="margin-top:8px"><strong>دبلوم:</strong> اللغة الإنجليزية — معهد SpeakNow (2019)</div>
-          <div class="muted" style="margin-top:6px"><strong>دبلوم:</strong> ICDL — معهد العلوم والتكنولوجيا (2019)</div>
-        </article>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Hamzah Ali Al-Haidari</h2>
+                <p>Network & Cybersecurity Engineer | Cybersecurity Analyst</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://tryhackme.com/p/ETH.CYBER" class="social-link" target="_blank">
+                        <i class="fas fa-shield-alt"></i>
+                    </a>
+                    <a href="https://www.credly.com/users/hamzah-alhaidari" class="social-link" target="_blank">
+                        <i class="fas fa-award"></i>
+                    </a>
+                    <a href="https://github.com/Hamzzaal" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 All Rights Reserved | Hamzah Ali Al-Haidari</p>
+            </div>
+        </div>
+    </footer>
 
-        <!-- CERTIFICATIONS (compact) -->
-        <article class="card section" id="certs-en">
-          <h2>Certifications</h2>
-          <div class="muted">Google Cybersecurity Professional Certificate — Jun 2025</div>
-          <div class="muted">Cybersecurity for Everyone — University of Maryland — Feb 2025</div>
-          <div class="muted">Career Path in Cybersecurity — Edraak — Jun 2024</div>
-          <div class="muted">Introduction to Networking — Edraak — Jun 2024</div>
-          <div class="muted">Python Essentials 1 — Cisco — Nov 2023</div>
-        </article>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-        <article class="card section rtl" id="certs-ar" style="display:none">
-          <h2>الشهادات</h2>
-          <div class="muted">شهادة Google Cybersecurity Professional — يونيو 2025</div>
-          <div class="muted">دورة Cybersecurity for Everyone — جامعة ماريلاند — فبراير 2025</div>
-          <div class="muted">Career Path in Cybersecurity — إدراك — يونيو 2024</div>
-          <div class="muted">Introduction to Networking — إدراك — يونيو 2024</div>
-          <div class="muted">Python Essentials 1 — سيسكو — نوفمبر 2023</div>
-        </article>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-        <!-- CONTACT SECTION (detailed) -->
-        <article class="card section" id="contact">
-          <h2>Contact</h2>
-          <div class="muted">Email: <a href="mailto:7.7hamza0@gmail.com">7.7hamza0@gmail.com</a></div>
-          <div class="muted">Phone: +967 772 765 706</div>
-          <div class="muted">LinkedIn: <a href="https://www.linkedin.com/in/hamzah-alhaidari-bb2228219" target="_blank">linkedin.com/in/hamzah-alhaidari</a></div>
-          <div class="muted">GitHub: <a href="https://github.com/Hamzzaal" target="_blank">github.com/Hamzzaal</a></div>
-        </article>
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        <footer>
-          <div class="small-muted">© 2025 Hamzah Ali Al‑Haidari — All rights reserved</div>
-        </footer>
-      </section>
-    </main>
-  </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-  <script>
-    // Language toggle
-    const toggle = document.getElementById('toggle-lang');
-    const enEls = {
-      left: document.getElementById('left-card-en'),
-      about: document.getElementById('about-en'),
-      experience: document.getElementById('experience-en'),
-      projects: document.getElementById('projects-en'),
-      education: document.getElementById('education-en'),
-      certs: document.getElementById('certs-en'),
-      name: document.getElementById('site-name-en'),
-      role: document.getElementById('site-role-en'),
-      contactPill: document.getElementById('contact-pill-en')
-    };
-    const arEls = {
-      left: document.getElementById('left-card-ar'),
-      about: document.getElementById('about-ar'),
-      experience: document.getElementById('experience-ar'),
-      projects: document.getElementById('projects-ar'),
-      education: document.getElementById('education-ar'),
-      certs: document.getElementById('certs-ar'),
-      name: document.getElementById('site-name-ar'),
-      role: document.getElementById('site-role-ar'),
-      contactPill: document.getElementById('contact-pill-ar')
-    };
-
-    let isArabic = false;
-    toggle.addEventListener('click', () => {
-      isArabic = !isArabic;
-      // toggle left column
-      enEls.left.style.display = isArabic ? 'none' : 'block';
-      arEls.left.style.display = isArabic ? 'block' : 'none';
-      // toggle right sections
-      enEls.about.style.display = isArabic ? 'none' : 'block';
-      arEls.about.style.display = isArabic ? 'block' : 'none';
-      enEls.experience.style.display = isArabic ? 'none' : 'block';
-      arEls.experience.style.display = isArabic ? 'block' : 'none';
-      enEls.projects.style.display = isArabic ? 'none' : 'block';
-      arEls.projects.style.display = isArabic ? 'block' : 'none';
-      enEls.education.style.display = isArabic ? 'none' : 'block';
-      arEls.education.style.display = isArabic ? 'block' : 'none';
-      enEls.certs.style.display = isArabic ? 'none' : 'block';
-      arEls.certs.style.display = isArabic ? 'block' : 'none';
-      // header names
-      enEls.name.style.display = isArabic ? 'none' : 'block';
-      enEls.role.style.display = isArabic ? 'none' : 'block';
-      arEls.name.style.display = isArabic ? 'block' : 'none';
-      arEls.role.style.display = isArabic ? 'block' : 'none';
-      // contact pill
-      enEls.contactPill.style.display = isArabic ? 'none' : 'inline-block';
-      arEls.contactPill.style.display = isArabic ? 'inline-block' : 'none';
-
-      // change button label
-      toggle.textContent = isArabic ? 'EN' : 'عربي';
-
-      // apply dir to body for correct alignment
-      document.documentElement.lang = isArabic ? 'ar' : 'en';
-      document.body.dir = isArabic ? 'rtl' : 'ltr';
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-      })
-    });
-  </script>
+        // Apply animation to elements
+        document.querySelectorAll('.skill-category, .project-card, .cert-card, .timeline-content, .achievement-item, .language-item').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
